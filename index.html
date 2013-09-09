@@ -28,7 +28,6 @@
             <p>We&nbsp;<span><a id="slot" class="linear" href="">code</a></span>&nbsp;stuff.</p>
         </div>
         <ul id="items">
-            <li><a class="home" href="#">Home</a></li>
             <li><a class="work" href="#">Work</a></li>
             <li><a class="contact" href="#">Contact</a></li>
             <li><a class="about" href="#">About</a></li>
@@ -36,15 +35,83 @@
     </nav>
     <!-- #End: Navigation -->
     
-    <!-- Work Page -->
-    <!-- <div class="work">
-        <h1>Work Page</h1>
-    </div> -->
-    <!-- #End: Work -->
-    
+
     <div id="main">
+
+        <!-- Work Page -->
+        <div id="workblock">
+            <header>
+                <a class="close" href="">&times;</a>
+            </header>
+            <ul class="stage">
+                <li>
+                    <div class="top">
+                        <img src="img/client-work-eden.jpg" border="0">
+                    </div>
+                    <div class="bottom">
+                        <h2>ELEMENT EDEN</h2>
+                        <div class="line"></div>
+                        <div class="content">
+                            <img src="img/icon-search.png" border="0">
+                            <img src="img/icon-link.png" border="0">
+                            <p>Motion Graphics</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <img src="img/client-work-element.jpg" border="0">
+                    </div>
+                    <div class="bottom">
+                        <h2>ELEMENT</h2>
+                        <div class="line"></div>
+                        <div class="content">
+                            <img src="img/icon-search.png" border="0">
+                            <img src="img/icon-link.png" border="0">
+                            <p>Photograhy</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <img src="img/client-work-lrds.jpg" border="0">
+                    </div>
+                    <div class="bottom">
+                        <h2>LRDS</h2>
+                        <div class="line"></div>
+                        <div class="content">
+                            <img src="img/icon-search.png" border="0">
+                            <img src="img/icon-link.png" border="0">
+                            <p>Logo Design</p>
+                            <p>Web Design</p>
+                            <p>Development</p>
+                            <p>Photograhy</p>
+                            <p>Video</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="top">
+                        <img src="img/client-work-jacvanek.jpg" border="0">
+                    </div>
+                    <div class="bottom">
+                        <h2>JAC VANEK</h2>
+                        <div class="line"></div>
+                        <div class="content">
+                            <img src="img/icon-search.png" border="0">
+                            <img src="img/icon-link.png" border="0">
+                            <p>Web Design</p>
+                            <p>Development</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- #End: Work -->
+
+
         <!-- Home Page -->
-        <div class="homeblock">
+        <div id="homeblock">
             <div class="logo">
                 <h1>Fat Cat</h1>
                 <small>Concise company description</small>
@@ -52,14 +119,28 @@
         </div>
         <!-- #End: Home -->
 
+
         <!-- About Page -->
-        <div class="aboutblock">
-            <h1>About Page</h1>
+        <div id="aboutblock">
+            <header>
+                <h1>"Every pixel counts"</h1>
+                <a class="close" href="">&times;</a>
+            </header>
+            <div class="content">
+                <p>Fat Cat is a group of media professionals based in <span>San Diego</span> dedicated to helping businesses boost their digital presence. Primarily focusing on small businesses and startups, Fat Cat provides high quality Web Design, Development, Photography, Video and Motion Graphics.</p>
+
+                <p>Offering a wide range of services, Fat Cat aims at creating and sustaining long-term partnerships.</p>
+                <div class="line"></div>
+            </div>
         </div>
         <!-- #End: About -->
 
+
         <!-- Contact Page -->
-        <div class="contactblock">
+        <div id="contactblock" class="noactive">
+            <header>
+                <a class="close" href="">&times;</a>
+            </header>
             <div class="wrapper">
                 <h1>LET'S BE FRIENDS</h1>
                 <form>
@@ -73,7 +154,9 @@
             </div>
         </div>
         <!-- #End: Contact Page -->
+
     </div>
+    <!-- #End: Main -->
 
     <!-- Functionality -->
     <script type="text/javascript" src="js/main.js"></script>

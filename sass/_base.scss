@@ -1,4 +1,13 @@
-//Colors
-$blue:  #0071b7;
-$grey:  #C6C6C6;
-$darkgrey: #666;
+// Colors
+$blue:    #0071b7;
+$grey:    #C6C6C6;
+$darkgrey:   #666;
+$mediumgrey: #333;
+
+// Mixins
+@mixin line( $width ){
+	width: $width;
+	height: 1px;
+	margin: 0 auto;
+	border-top: 1px solid $grey;
+}

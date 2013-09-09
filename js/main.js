@@ -48,40 +48,88 @@ Dealer.prototype.stop = function () {
 var firstDealer = new Dealer('slot', ['code', 'shoot', 'film', 'edit']);
 firstDealer.run();
 
-
 $(document).ready(function () {
+
+    // Get stage height apply to top element
+    var height = $('#main').css("height");
+    $('#workblock').css("margin-top", "-" + height);
+
 
 	// Menu animation
 	$('#toggle').bind( "click", function (e) {
+
 		e.preventDefault();
+
 		$('#items li').each(function (index) {
 			$(this).delay(150*index)
 				       .fadeIn(1000);
 		});
 	});
 
-    // Page Scrolling
-    $("#items li a").bind( "click", function (e) {
+
+    // Block scrolling
+    $('#items li a').bind( "click", function (e) {
+
         e.preventDefault();
 
-        var target = $(this).attr("class") + "block";
-        var height = $("#main").css("height");
+        var icon   = $(this).attr("class"),
+            target = icon + "block";
+
+        $('.logo, .flip, #items').fadeOut(50);
+
+        $('.icon').css("background", "#C6C6C6 url(img/menu-icon-" + icon + ".png) no-repeat center");
 
         if(target == "contactblock"){
-            $(".logo, .flip").fadeOut("fast");
-            $(".contactblock").fadeIn("slow");
+            $('#contactblock').removeClass('noactive')
+                                   .addClass('active');
         }
-
         if(target == "workblock"){
-            $(".homeblock").css("margin-bottom", "-" + height);
+            $('#workblock').css("margin-top", 0);
+            $('#homeblock').css("margin-top", height);
         }
-
         if(target == "aboutblock"){
-            $(".homeblock").css("margin-top", "-" + height);
+            $('#homeblock').css("margin-top", "-" + height);
         }
     });
-});
 
+
+    // Block closing
+    $('#aboutblock header a').bind( "click", function (e) {
+
+        e.preventDefault();
+
+        console.log("Clicked about close");
+
+        $('.icon').css("background", "#C6C6C6 url(img/icon-list-menu.png) no-repeat center");
+
+        $('.logo, .flip, #items').fadeIn("slow");
+        $('#homeblock').css("margin-top", 0);
+    });
+
+    $('#workblock header a').bind( "click", function (e) {
+
+        e.preventDefault();
+
+        console.log("Clicked work close");
+
+        $('.icon').css( "background", "#C6C6C6 url(img/icon-list-menu.png) no-repeat center");
+
+        $('.logo, .flip, #items').fadeIn("slow");
+        $('#workblock').css("margin-top", "-" + height);
+        $('#homeblock').css("margin-top", 0);
+    });
+
+    $('#contactblock header a').bind( "click", function (e) {
+
+        e.preventDefault();
+
+        $('.icon').css("background", "#C6C6C6 url(img/icon-list-menu.png) no-repeat center");
+
+        $('.logo, .flip, #items').fadeIn("slow");
+        $('#contactblock').removeClass('active')
+                           .addClass('noactive');
+    });
+});
 
 
 
