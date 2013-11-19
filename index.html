@@ -1,164 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content=""/>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <meta name="description" content="San Diego based, Fat Cat specializes in Web Design, Development, Photography, Video and Motion Graphics."/>
 
     <title>Fat Cat | Meow..</title>
 
     <!-- Styling -->
-    <link rel="stylesheet" href="css/app.css" media="all">
+    <link href="css/app.css" rel="stylesheet" media="all">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
 
-    <!-- Javascript CDN & Fallback -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>!window.jQuery && document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+    <script src="bower_components/Snap.svg/snap.svg-min.js"></script>
 </head>
+  <body ng-app="NewApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-<body>
-    <!-- Navigation -->
-    <nav>
-        <div class="icon linear">
-            <a id="toggle" href="#" title="Toggle Navigation">Menu</a>
-        </div>
-        <div class="flip">
-            <p>We&nbsp;<span><a id="slot" class="linear" href="">code</a></span>&nbsp;stuff.</p>
-        </div>
-        <ul id="items">
-            <li><a class="work" href="#">Work</a></li>
-            <li><a class="contact" href="#">Contact</a></li>
-            <li><a class="about" href="#">About</a></li>
-        </ul>
-    </nav>
-    <!-- #End: Navigation -->
-    
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
 
-    <div id="main">
+    <!-- Add your site or application content here -->
+    <div id="main" ng-view=""></div>
 
-        <!-- Work Page -->
-        <div id="workblock">
-            <header>
-                <a class="close" href="">&times;</a>
-            </header>
-            <ul class="stage">
-                <li>
-                    <div class="top">
-                        <img src="img/client-work-eden.jpg" border="0">
-                    </div>
-                    <div class="bottom">
-                        <h2>ELEMENT EDEN</h2>
-                        <div class="line"></div>
-                        <div class="content">
-                            <img src="img/icon-search.png" border="0">
-                            <img src="img/icon-link.png" border="0">
-                            <p>Motion Graphics</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top">
-                        <img src="img/client-work-element.jpg" border="0">
-                    </div>
-                    <div class="bottom">
-                        <h2>ELEMENT</h2>
-                        <div class="line"></div>
-                        <div class="content">
-                            <img src="img/icon-search.png" border="0">
-                            <img src="img/icon-link.png" border="0">
-                            <p>Photograhy</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top">
-                        <img src="img/client-work-lrds.jpg" border="0">
-                    </div>
-                    <div class="bottom">
-                        <h2>LRDS</h2>
-                        <div class="line"></div>
-                        <div class="content">
-                            <img src="img/icon-search.png" border="0">
-                            <img src="img/icon-link.png" border="0">
-                            <p>Logo Design</p>
-                            <p>Web Design</p>
-                            <p>Development</p>
-                            <p>Photograhy</p>
-                            <p>Video</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="top">
-                        <img src="img/client-work-jacvanek.jpg" border="0">
-                    </div>
-                    <div class="bottom">
-                        <h2>JAC VANEK</h2>
-                        <div class="line"></div>
-                        <div class="content">
-                            <img src="img/icon-search.png" border="0">
-                            <img src="img/icon-link.png" border="0">
-                            <p>Web Design</p>
-                            <p>Development</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!-- #End: Work -->
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
 
 
-        <!-- Home Page -->
-        <div id="homeblock">
-            <div class="logo">
-                <h1>Fat Cat</h1>
-                <small>Concise company description</small>
-            </div>
-        </div>
-        <!-- #End: Home -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
 
-
-        <!-- About Page -->
-        <div id="aboutblock">
-            <header>
-                <h1>"Every pixel counts"</h1>
-                <a class="close" href="">&times;</a>
-            </header>
-            <div class="content">
-                <p>Fat Cat is a group of media professionals based in <span>San Diego</span> dedicated to helping businesses boost their digital presence. Primarily focusing on small businesses and startups, Fat Cat provides high quality Web Design, Development, Photography, Video and Motion Graphics.</p>
-
-                <p>Offering a wide range of services, Fat Cat aims at creating and sustaining long-term partnerships.</p>
-                <div class="line"></div>
-            </div>
-        </div>
-        <!-- #End: About -->
-
-
-        <!-- Contact Page -->
-        <div id="contactblock" class="noactive">
-            <header>
-                <a class="close" href="">&times;</a>
-            </header>
-            <div class="wrapper">
-                <h1>LET'S BE FRIENDS</h1>
-                <form>
-                    <input class="name" type="text" placeholder="Name"><br />
-                    <input class="email" type="text" placeholder="Email"><br />
-                    <input class="subject" type="text" placeholder="Subject"><br />
-                    <textarea class="text" placeholder="Meow..."></textarea><br />
-                    <input class="btn blue" type="submit" value="Blast Off">
-                    <span  class="meta"><strong>info</strong>@fatcatonline.net</span>
-                </form>
-            </div>
-        </div>
-        <!-- #End: Contact Page -->
-
-    </div>
-    <!-- #End: Main -->
-
-    <!-- Functionality -->
-    <script type="text/javascript" src="js/main.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

@@ -1,0 +1,114 @@
+    <!-- Navigation
+    -------------------------------------->
+    <nav ng-hide="move">
+        <div class="menu" ng-click="expand()" >
+            <button class="list" ng-class="{'grey': grow}">
+                <i class="fa fa-list-ul"></i>
+            </button>
+            <div class="circle large">
+                <span class="bounce" ng-class="{'menu-active': grow}">&nbsp;</span>
+            </div>
+        </div>
+        <div class="flip">
+            <p ng-hide="move">We&nbsp;<span><a id="slot" class="linear" ng-click="slide(1)">build</a></span>&nbsp;web&nbsp;stuff.</p>
+        </div>
+        <ul id="items">
+            <li ng-show="grow" class="navItem">
+                <button ng-click="slide(1)"><i class="fa fa-desktop fa-lg"></i> <span>Our Work</span></button>
+            </li>
+            <li ng-show="grow" class="navItem">
+                <button ng-click="fade()"><i class="fa fa-envelope fa-lg"></i> <span>Meow</span></button>
+            </li>
+            <li ng-show="grow" class="navItem">
+                <button ng-click="slide(-1)"><i class="fa fa-info fa-lg"></i> <span>About Us</span></button>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- <nav ng-show="move">
+        <div class="menu menu-exit" ng-click="slide(0)">
+            <button class="list">
+                <i class="fa fa-times warn"></i>
+            </button>
+            <div class="circle">
+                <span class="menu-active bounce">&nbsp;</span>
+            </div>
+        </div>
+    </nav> -->
+
+    <nav ng-show="move">
+        <a class="menu-exit linear" href="" ng-click="slide(0)">
+            <i class="fa fa-times-circle"></i>HOME
+        </a>
+    </nav>
+    <!-- #End: Navigation -->
+
+
+    <!-- MAIN CONTENT
+    -------------------------------------->
+    <div id="content" class="easeInOut" style="{{slideDir}}">
+
+        <!-- Work Page -->
+        <div id="workblock">
+            <div class="portfolio-sidebar">
+                <div class="portfolio-sidebar-box">
+                    <h3>OUR WORK</h3>
+                    <ul class="portfolio-categories">
+                        <li><a class="active" href="" title="" ng-click="filterCategory('')">All</a></li>
+                        <li><a href="" title="" ng-click="filterCategory('photography')">Photography</a></li>
+                        <li><a href="" title="" ng-click="filterCategory('video')">Video</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="stage">
+                <li ng-repeat="piece in portfolioPieces | filter: category"><img src="img/portfolio/{{$index+1}}.jpg" border="" alt=""></li>
+            </ul>
+        </div>
+        <!-- #End: Work -->
+
+
+        <!-- Home Page -->
+        <div id="homeblock">
+            <div class="logo linear" ng-class="{'active': !show}">
+                <h1>Fat Cat</h1>
+                <small>Concise company description</small>
+            </div>
+        </div>
+        <!-- #End: Home -->
+
+
+        <!-- About Page -->
+        <div id="aboutblock">
+            <header>
+                <h1>"Every pixel counts"</h1>
+            </header>
+            <div class="content">
+                <p>Fat Cat is a group of media professionals based in <span>San Diego</span> dedicated to helping businesses boost their digital presence. Primarily focusing on small businesses and startups, Fat Cat provides high quality Web Design, Development, Photography, Video and Motion Graphics.</p>
+
+                <p>Offering a wide range of services, Fat Cat aims at creating and sustaining long-term partnerships.</p>
+                <div class="line"></div>
+            </div>
+        </div>
+        <!-- #End: About -->
+
+    </div> <!-- #End: Content -->
+
+
+    <!-- Overlay Contact Page -->
+    <div id="contactblock" class="linear" ng-class="{'active': show}">
+        <header>
+            <button class="close" ng-click="fade()">&times;</button>
+        </header>
+        <div class="wrapper">
+            <h1>LET'S BE FRIENDS</h1>
+            <form>
+                <input class="name" type="text" placeholder="Name"><br />
+                <input class="email" type="text" placeholder="Email"><br />
+                <input class="subject" type="text" placeholder="Subject"><br />
+                <textarea class="text" placeholder="Meow..."></textarea><br />
+                <input class="btn blue" type="submit" value="BLAST OFF">
+                <span  class="meta"><strong>info</strong>@fatcatonline.net</span>
+            </form>
+        </div>
+    </div>
+    <!-- #End: Overlay Contact Page -->
