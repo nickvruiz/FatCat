@@ -1,6 +1,6 @@
     <!-- Navigation
     -------------------------------------->
-    <nav ng-hide="move">
+    <nav class="nav-menu" ng-class="{'nav-menu-active': !move}">
         <div class="menu" ng-click="expand()" >
             <button class="list" ng-class="{'grey': grow}">
                 <i class="fa fa-list-ul"></i>
@@ -9,35 +9,27 @@
                 <span class="bounce" ng-class="{'menu-active': grow}">&nbsp;</span>
             </div>
         </div>
-        <div class="flip">
-            <p ng-hide="move">We&nbsp;<span><a id="slot" class="linear" ng-click="slide(1)">build</a></span>&nbsp;web&nbsp;stuff.</p>
+        <div class="flip" ng-hide="meta">
+            <p>We&nbsp;<span><a id="slot" ng-click="slide('top')">build</a></span>&nbsp;web&nbsp;stuff.</p>
         </div>
         <ul id="items">
+            <!-- <li ng-show="grow" ng-repeat="page in pages" class="navItem">
+                <button ng-click="{{ page.action }}"><i class="fa fa-{{ page.icon }} fa-lg"></i></button>
+            </li> -->
             <li ng-show="grow" class="navItem">
-                <button ng-click="slide(1)"><i class="fa fa-desktop fa-lg"></i> <span>Our Work</span></button>
+                <button ng-click="slide('top')"><i class="fa fa-desktop fa-lg"></i></button>
             </li>
             <li ng-show="grow" class="navItem">
-                <button ng-click="fade()"><i class="fa fa-envelope fa-lg"></i> <span>Meow</span></button>
+                <button ng-click="fade()"><i class="fa fa-envelope fa-lg"></i></button>
             </li>
             <li ng-show="grow" class="navItem">
-                <button ng-click="slide(-1)"><i class="fa fa-info fa-lg"></i> <span>About Us</span></button>
+                <button ng-click="slide('btm')"><i class="fa fa-info fa-lg"></i></button>
             </li>
         </ul>
     </nav>
 
-    <!-- <nav ng-show="move">
-        <div class="menu menu-exit" ng-click="slide(0)">
-            <button class="list">
-                <i class="fa fa-times warn"></i>
-            </button>
-            <div class="circle">
-                <span class="menu-active bounce">&nbsp;</span>
-            </div>
-        </div>
-    </nav> -->
-
-    <nav ng-show="move">
-        <a class="menu-exit linear" href="" ng-click="slide(0)">
+    <nav class="nav-menu" ng-class="{'nav-menu-active': move}">
+        <a class="menu-exit linear" href="" ng-click="slide('mid')">
             <i class="fa fa-times-circle"></i>HOME
         </a>
     </nav>
@@ -46,7 +38,7 @@
 
     <!-- MAIN CONTENT
     -------------------------------------->
-    <div id="content" class="easeInOut" style="{{slideDir}}">
+    <div id="content" class="ease-in-out {{ slideDir }}">
 
         <!-- Work Page -->
         <div id="workblock">
@@ -54,14 +46,44 @@
                 <div class="portfolio-sidebar-box">
                     <h3>OUR WORK</h3>
                     <ul class="portfolio-categories">
-                        <li><a class="active" href="" title="" ng-click="filterCategory('')">All</a></li>
-                        <li><a href="" title="" ng-click="filterCategory('photography')">Photography</a></li>
-                        <li><a href="" title="" ng-click="filterCategory('video')">Video</a></li>
+                        <li ng-repeat="category in portfolioCategories">
+                            <a href="" title="" ng-class="{active: selectedIndex == $index}" ng-click="filterCategory(category.filter)">
+                                <i class="fa fa-{{ category.icon }}"></i> {{ category.name }}
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <ul class="stage">
-                <li ng-repeat="piece in portfolioPieces | filter: category"><img src="img/portfolio/{{$index+1}}.jpg" border="" alt=""></li>
+            <ul class="portfolio-pieces-stage">
+                <li class="portfolio-piece" ng-repeat="piece in portfolioPieces | filter: categoryFilter">
+                    <a class="portfolio-main-image" href="" title="">
+                        <img ng-src="images/portfolio/{{ piece.id }}/main.jpg" border="" alt="">
+                        <span><i class="fa fa-{{ piece.icon }}"></i></span>
+                    </a>
+                    <div class="portfolio-piece-info-block">
+                        <div class="portfolio-piece-info">
+                            <h1>{{ piece.client }}</h1>
+                            <div class="portfolio-title-line"></div>
+                            <p>{{ piece.description }}</p>
+                            <ul class="portfolio-extras">
+                                <li>
+                                    <h3>RESOURCES:</h3>
+                                    <div class="portfolio-title-line"></div>
+                                </li>
+                                <li>
+                                    <a href="" class="extra-btn" ng-click="setPortfolioExtraState(piece.id)">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="extra-btn" href="{{ piece.link }}" title="{{ piece.client }}" target="_blank">
+                                        <i class="fa fa-external-link"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
         <!-- #End: Work -->
@@ -84,7 +106,6 @@
             </header>
             <div class="content">
                 <p>Fat Cat is a group of media professionals based in <span>San Diego</span> dedicated to helping businesses boost their digital presence. Primarily focusing on small businesses and startups, Fat Cat provides high quality Web Design, Development, Photography, Video and Motion Graphics.</p>
-
                 <p>Offering a wide range of services, Fat Cat aims at creating and sustaining long-term partnerships.</p>
                 <div class="line"></div>
             </div>
@@ -95,20 +116,33 @@
 
 
     <!-- Overlay Contact Page -->
-    <div id="contactblock" class="linear" ng-class="{'active': show}">
+    <div id="overlayblock" class="linear" ng-class="{'active': show}">
         <header>
             <button class="close" ng-click="fade()">&times;</button>
         </header>
-        <div class="wrapper">
+        <div class="wrapper-contact" ng-hide="portfolioExtraState">
             <h1>LET'S BE FRIENDS</h1>
-            <form>
-                <input class="name" type="text" placeholder="Name"><br />
-                <input class="email" type="text" placeholder="Email"><br />
-                <input class="subject" type="text" placeholder="Subject"><br />
-                <textarea class="text" placeholder="Meow..."></textarea><br />
+            <i class="fa fa-info"></i><span class="meta">All fields below are required</span>
+            <form class="contact-form" ng-submit="contactFatCat();">
+                <input class="name" type="text" placeholder="Name" ng-model="username"><br />
+                <input class="email" type="text" placeholder="Email" ng-model="email"><br />
+                <input class="subject" type="text" placeholder="Subject" ng-model="subject"><br />
+                <textarea class="text" placeholder="Meow..." ng-model="message"></textarea><br />
                 <input class="btn blue" type="submit" value="BLAST OFF">
-                <span  class="meta"><strong>info</strong>@fatcatonline.net</span>
+                <span class="meta"><strong>info</strong>@fatcatonline.net</span>
             </form>
+        </div>
+        <div class="wrapper-portfolio" ng-show="portfolioExtraState">
+            <div class="portfolio-extras-main-block">
+                <img ng-src="../images/portfolio/{{ portfolioId }}/gallery/{{ extraId }}.jpg">
+            </div>
+            <ul class="portfolio-extras-thumbs-block">
+                <li ng-repeat="thumb in portfolioPieces[portfolioId].extras">
+                    <a href="" class="{{ $index }}" ng-click="setMainBlock($index)">
+                        <img ng-src="../images/portfolio/{{ portfolioId }}/gallery/{{ $index }}.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
     <!-- #End: Overlay Contact Page -->

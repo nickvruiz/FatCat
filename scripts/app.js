@@ -2,7 +2,7 @@
 
 angular.module('NewApp', [
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
   ])
   .config(function ($routeProvider) {
     $routeProvider
