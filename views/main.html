@@ -20,7 +20,7 @@
                 <button ng-click="slide('top')"><i class="fa fa-desktop fa-lg"></i></button>
             </li>
             <li ng-show="grow" class="navItem">
-                <button ng-click="fade()"><i class="fa fa-envelope fa-lg"></i></button>
+                <button ng-click="showContactPage()"><i class="fa fa-envelope fa-lg"></i></button>
             </li>
             <li ng-show="grow" class="navItem">
                 <button ng-click="slide('btm')"><i class="fa fa-info fa-lg"></i></button>
@@ -61,22 +61,23 @@
                         <span><i class="fa fa-{{ piece.icon }}"></i></span>
                     </a>
                     <div class="portfolio-piece-info-block">
-                        <div class="portfolio-piece-info">
+                        <div class="info-header info-row">
                             <h1>{{ piece.client }}</h1>
                             <div class="portfolio-title-line"></div>
-                            <p>{{ piece.description }}</p>
+                        </div>
+                        <div class="info-description info-row">
+                            <p ng-bind-html="piece.description"></p>
+                        </div>
+                        <div class="info-extras info-row">
                             <ul class="portfolio-extras">
+                                <li><h3>RESOURCES:</h3></li>
                                 <li>
-                                    <h3>RESOURCES:</h3>
-                                    <div class="portfolio-title-line"></div>
-                                </li>
-                                <li>
-                                    <a href="" class="extra-btn" ng-click="setPortfolioExtraState(piece.id)">
+                                    <a href="" class="btn blue" ng-click="showPortfolioExtras(piece.id)">
                                         <i class="fa fa-search"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="extra-btn" href="{{ piece.link }}" title="{{ piece.client }}" target="_blank">
+                                    <a class="btn blue" href="{{ piece.link }}" title="{{ piece.client }}" target="_blank">
                                         <i class="fa fa-external-link"></i>
                                     </a>
                                 </li>
@@ -116,7 +117,7 @@
 
 
     <!-- Overlay Contact Page -->
-    <div id="overlayblock" class="linear" ng-class="{'active': show}">
+    <div id="overlayblock" ng-show="show">
         <header>
             <button class="close" ng-click="fade()">&times;</button>
         </header>
