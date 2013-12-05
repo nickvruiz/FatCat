@@ -31,15 +31,17 @@ angular.module('NewApp')
     $scope.portfolioPieces = [
       { id: 0,
         client: 'lrds',
-        description: 'location scouting / photography',
+        excerpt: 'location scouting / photography',
+        description: '<p>"LOS RODRIGUEZ DE SINALOA," brothers from Sinaloa, are an up and coming banda music band.</p><p>They approached us with an idea for an urban photoshoot. So we took the idea, scouted for locations and settled with a rooftop spot in the heart of Downtown San Diego, CA.</p>',
         category: 'photo',
         icon: 'camera',
         link: 'http://lrds.tv',
-        extras:[0]
+        extras:[0,1,2,3]
       },
       { id: 1,
         client: 'element eden',
-        description: 'motion graphics',
+        excerpt: 'motion graphics',
+        description: 'Description',
         category: 'motion',
         icon: 'video-camera',
         link: 'http://elementeden.com/us/',
@@ -47,19 +49,21 @@ angular.module('NewApp')
       },
       { id: 2,
         client: 'jac vanek',
-        description: 'repsonsive design / development / ecommerce',
+        excerpt: 'repsonsive design / development / ecommerce',
+        description: 'Description',
         category: 'web',
         icon: 'desktop',
         link: 'http://jacvanek.com',
         extras:[0]
       },
       { id: 3,
-        client: 'good libations brewing',
-        description: 'product photography / compositing',
+        client: 'glb',
+        excerpt: 'product photography / compositing',
+        description: '<p>"GOOD LIBATIONS BREWING" had some bottles of their brew with labels to go along. Our task, to put the labels and bottles togther.</p><p>We started by shooting the bottles and beers/glasses in a studio. When all the dust settled, we brought the RAW images into photoshop and composited the lables on.</p>',
         category: 'photo',
         icon: 'camera',
         link: 'http://goodlibationsbrewing.com',
-        extras: [1,2]
+        extras: [0,1,2]
       }
     ];
 
@@ -82,6 +86,7 @@ angular.module('NewApp')
     }
 
     $scope.showPortfolioExtras = function (id) {
+      $scope.extraId = 0;
       $scope.portfolioExtraState = true;
       $scope.portfolioId = id;
       $scope.fade();

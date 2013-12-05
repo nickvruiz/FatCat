@@ -29,8 +29,8 @@
     </nav>
 
     <nav class="nav-menu" ng-class="{'nav-menu-active': move}">
-        <a class="menu-exit linear" href="" ng-click="slide('mid')">
-            <i class="fa fa-times-circle"></i>HOME
+        <a class="menu-exit" href="" ng-click="slide('mid')">
+            <span class="close-portfolio">&times;</span>&nbsp;HOME
         </a>
     </nav>
     <!-- #End: Navigation -->
@@ -58,30 +58,33 @@
                 <li class="portfolio-piece" ng-repeat="piece in portfolioPieces | filter: categoryFilter">
                     <a class="portfolio-main-image" href="" title="">
                         <img ng-src="images/portfolio/{{ piece.id }}/main.jpg" border="" alt="">
-                        <span><i class="fa fa-{{ piece.icon }}"></i></span>
+                        <!-- <span><i class="fa fa-{{ piece.icon }}"></i></span> -->
                     </a>
                     <div class="portfolio-piece-info-block">
-                        <div class="info-header info-row">
-                            <h1>{{ piece.client }}</h1>
-                            <div class="portfolio-title-line"></div>
+                        <div class="info-description">
+                            <p><i class="fa fa-{{ piece.icon }}"></i></p><p ng-bind-html="piece.excerpt"></p>
                         </div>
-                        <div class="info-description info-row">
-                            <p ng-bind-html="piece.description"></p>
-                        </div>
-                        <div class="info-extras info-row">
-                            <ul class="portfolio-extras">
-                                <li><h3>RESOURCES:</h3></li>
-                                <li>
-                                    <a href="" class="btn blue" ng-click="showPortfolioExtras(piece.id)">
-                                        <i class="fa fa-search"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="btn blue" href="{{ piece.link }}" title="{{ piece.client }}" target="_blank">
-                                        <i class="fa fa-external-link"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                        <div class="info-row">
+                            <div class="info-header">
+                                <h1>{{ piece.client }}</h1>
+                                <div class="portfolio-title-line"></div>
+                            </div>
+                            <div class="portfolio-description" ng-bind-html="piece.description"></div>
+                            <div class="info-extras">
+                                <ul class="portfolio-extras">
+                                    <li><h3>MORE:</h3></li>
+                                    <li>
+                                        <a href="" class="btn" ng-click="showPortfolioExtras(piece.id)">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="btn" href="{{ piece.link }}" title="{{ piece.client }}" target="_blank">
+                                            <i class="fa fa-external-link"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -119,7 +122,7 @@
     <!-- Overlay Contact Page -->
     <div id="overlayblock" ng-show="show">
         <header>
-            <button class="close" ng-click="fade()">&times;</button>
+            <button class="close-overlay" ng-click="fade()">&times;</button>
         </header>
         <div class="wrapper-contact" ng-hide="portfolioExtraState">
             <h1>LET'S BE FRIENDS</h1>
@@ -135,12 +138,18 @@
         </div>
         <div class="wrapper-portfolio" ng-show="portfolioExtraState">
             <div class="portfolio-extras-main-block">
-                <img ng-src="../images/portfolio/{{ portfolioId }}/gallery/{{ extraId }}.jpg">
+                <img ng-src="images/portfolio/{{ portfolioId }}/gallery/{{ extraId }}.jpg">
+                <div class="info-block">
+                    <a ng-href="{{ portfolioPieces[portfolioId].link }}" target="_blank" title="">
+                        <h3><i class="fa fa-external-link"></i>&nbsp;{{ portfolioPieces[portfolioId].client }}</h3>
+                    </a>
+                    <span ng-bind-html="portfolioPieces[portfolioId].description"></span>
+                </div>
             </div>
             <ul class="portfolio-extras-thumbs-block">
                 <li ng-repeat="thumb in portfolioPieces[portfolioId].extras">
                     <a href="" class="{{ $index }}" ng-click="setMainBlock($index)">
-                        <img ng-src="../images/portfolio/{{ portfolioId }}/gallery/{{ $index }}.jpg" alt="">
+                        <img ng-src="images/portfolio/{{ portfolioId }}/gallery/{{ $index }}.jpg" alt="">
                     </a>
                 </li>
             </ul>
