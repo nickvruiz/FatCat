@@ -1,0 +1,590 @@
+/*
+#   Built By FatCat =^^=
+#   www.fatcatonline.net
+*/
+
+/*---------------------------------*/
+
+/* Main Window */
+#main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Contact Page */
+#overlayblock{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    color: white;
+    background: url('../images/wrapper-bg.png') repeat top left;
+    z-index: 999;
+    header{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.wrapper-contact,
+.wrapper-portfolio{
+    position: absolute;
+    height: 700px;
+    top: 50%;
+    h1{
+        margin: 0 0 20px 0;
+        text-transform: uppercase;
+    }
+}
+
+.wrapper-contact{
+    width: 50%;
+    left: 25%;
+    margin-top: -227px;
+}
+
+.wrapper-portfolio{
+    width: 890px;
+    left: 50%;
+    margin: -280px 0 0 -445px;
+}
+
+.portfolio-extras-main-block{
+    position: relative;
+    width: 780px;
+    height: 560px;
+    float: left;
+    margin-right: 10px;
+    .info-block{
+        position: absolute;
+        width: 180px;
+        padding: 10px;
+        left: -160px;
+        top: 20px;
+        line-height: 25px;
+        font-weight: 100;
+        color: white;
+        background: rgba(0,0,0, .7);
+    }
+    p{
+        margin-bottom: 20px;
+    }
+    h3{
+        text-transform: uppercase;
+        margin-bottom: 5px;
+    }
+}
+
+.portfolio-extras-thumbs-block{
+    width: 100px;
+    float: left;
+    margin: 0;
+    li{
+        width: 100%;
+        height: 72px;
+        a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin-top: 10px;
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.contact-form{
+    margin-top: 30px;
+}
+
+#content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // top: 100%!important;
+    top: 0;
+    left: 0;
+}
+
+#workblock,
+#homeblock,
+#aboutblock{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    margin: 0; padding: 0;
+}
+
+
+/* Home Page Styling */
+#homeblock{
+    top: 0;
+    background: url('../images/bg.jpg') no-repeat center center fixed;
+
+    //Full size background
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+
+    //Fluid center
+    .logo{
+        width: 373px;
+        height: 156px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -78px 0 0 -186.5px;
+        overflow: hidden;
+        text-indent: -999em;
+        background: url('../images/logo-fatcat.png') no-repeat center;
+        opacity: 0;
+        h1, small{
+            margin-left: -999em;
+        }
+    }
+}
+
+
+/* Portfolio Page Styling */
+#workblock{
+    top: -100%;
+    background: black;
+}
+
+.portfolio-sidebar{
+    width: 15%;
+    height: 100%;
+    float: left;
+    background: #1a1a1a;
+    @include box-shadow(black 5px 0 10px);
+    h3{
+        color: #c8c8c8;
+        text-indent: 40px;
+        margin: 0;
+        padding: 40px 0 20px 0;
+        border-top: 1px solid #272727;
+    }
+}
+
+.portfolio-sidebar-box{
+    width: 100%;
+    margin-top: 105px;
+    border-top: 1px solid black;
+}
+
+ul.portfolio-categories{
+    margin: 0;
+    padding: 0;
+    li{
+        width: 100%;
+        height: 50px;
+        margin: 0 0 1px 0;
+    }
+    i{
+        margin-right: 10px;
+        font-size: .85em;
+        opacity: .5;
+    }
+    a{
+        display: block;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        color: $darkgrey;
+        font-size: 1.286em;
+        text-transform: uppercase;
+        font-weight: 100;
+        text-indent: 20px;
+    }
+    .active, a:hover{
+        position: relative;
+        color: white;
+        background: #282828;
+        &:before{
+            content: '';
+            position: absolute;
+            width: 5px;
+            height: 100%;
+            background: $blue;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+ul.portfolio-pieces-stage{
+    width: 85%;
+    height: 100%;
+    margin: 0;
+    float: left;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.portfolio-piece{
+    list-style: none;
+    width: 100%;
+    height: 433px;
+    overflow: hidden;
+    float: left;
+    border-bottom: 1px solid $grey;
+    .portfolio-main-image{
+        position: relative;
+        display: block;
+        width: 50%;
+        height: 433px;
+        float: left;
+        overflow: hidden;
+        span{
+            position: absolute;
+            display: block;
+            width: 40px;
+            height: 40px;
+            top: 25px;
+            right: -2px;
+            text-align: center;
+            line-height: 40px;
+            color: black;
+            border-radius: 2px;
+            background: url('../images/patterns/striped_lens.png') repeat top left;
+            -webkit-box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, .3);
+            box-shadow:  0px 0px 10px 0px rgba(0, 0, 0, .3);
+        }
+        &:before,
+        &:after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('../images/portfolio-piece-main-shadow-r.png') repeat-y top right,
+                        url('../images/portfolio-piece-main-shadow-l.png') repeat-y top left;
+        }
+        &:before{
+            border-left: 1px solid black;
+        }
+    }
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.portfolio-piece-info-block{
+    width: 50%;
+    height: 100%;
+    float: left;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: url('../images/patterns/striped_lens.png') repeat top left;
+}
+
+.portfolio-description{
+    margin-top: 20px;
+    p{
+        width: 90%;
+        margin: 0 0 10px 0;
+        line-height: 25px;
+    }
+}
+
+.info-row{
+    margin-left: 60px;
+}
+
+.info-header{
+    color: black;
+    @include single-text-shadow(white, 1px, 1px, 0);
+    h1{
+        margin: 40px 0 10px 0;
+        line-height: 30px;
+    }
+}
+
+.info-description{
+    height: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 60px;
+    border-bottom: 1px solid black;
+    background: #222;
+    // background: url('../images/patterns/black_linen_v2.png') repeat top left;
+    p{
+        float: left;
+        font-weight: 400;
+        letter-spacing: .85px;
+        color: $lightgrey;
+        &:first-child{
+            padding: 0 20px;
+            margin-right: 20px;
+            border-right: 1px solid #444;
+        }
+    }
+}
+
+.info-extras{
+    color: black;
+    @include single-text-shadow(white, 1px, 1px, 0);
+    h3{
+        font-style: italic;
+        margin: 0 15px 5px 2px;
+    }
+    .fa-bolt{
+        width: 25px;
+        height: 25px;
+        margin-top: -12px;
+        border: 1px solid black;
+        color: black;
+        text-align: center;
+        border-radius: 25px;
+        line-height: 25px;
+    }
+}
+
+.portfolio-title-line{
+     @include line(55px);
+ }
+
+ .portfolio-extras{
+    margin-top: 30px;
+    li{
+        height: 40px;
+        list-style: none;
+        margin: 0 10px 0 0;
+        float: left;
+    }
+    .btn{
+        color: $lightgrey;
+        background: #222;
+        padding: 10px 15px;
+        // Shadow
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
+        &:hover{
+            color: white;
+            background: $blue;
+        }
+    }
+}
+
+
+/* About Page Styling */
+#aboutblock{
+    bottom:-100%;
+    background: white;
+    header{
+        position: relative;
+        width: 100%;
+        height: 120px;
+        line-height: 120px;
+        text-align: center;
+        background: $darkgrey;
+        h1{
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-size: 4.929em;
+            font-style: italic;
+        }
+        a{
+            display: block;
+            position: absolute;
+            height: 80px;
+            width: 20px;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 20px;
+            color: white;
+            font-weight: 200;
+            font-size: 2em;
+            line-height: 80px;
+            background: $mediumgrey;
+            cursor: pointer;
+        }
+    }
+
+    // Mission statement
+    .content{
+        width: 61%;
+        margin: 0 auto;
+        font-weight: 200;
+        font-size: 2.243em;
+        line-height: 55px;
+        color: $darkgrey;
+        p{
+            margin: 60px 0;
+            padding:0;
+        }
+        span{
+            color: $blue;
+            font-weight: 400;
+            font-style: italic;
+        }
+        .line{
+            @include line(100px);
+        }
+    }
+}
+
+
+/* Nav Button */
+.nav-menu{
+    margin: 20px 0 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    .menu{
+        display: block;
+        width: 70px;
+        height: 70px;
+        position: relative;
+        margin-right: 20px;
+        float: left;
+        text-align: center;
+        line-height: 70px;
+        z-index: 4;
+        .list{
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            top: 50%;
+            left: 50%;
+            margin: -11px 0 0 -13px;
+            color: white;
+            font-size: 1.15em;
+            text-align: center;
+            line-height: 23px;
+            border-radius: 100%;
+            background: none;
+            &:hover{
+                color: $blue;
+            }
+        }
+        .circle{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 100%;
+            z-index: -1;
+            span{
+                position: absolute;
+                display: block;
+                width: 30px;
+                height: 30px;
+                top: 50%;
+                left: 50%;
+                margin: -14px 0 0 -14px;
+                padding: 0;
+                line-height: 100%;
+                border-radius: 100%;
+                // border: 2px solid transparent;
+                background: none;
+            }
+            .menu-active{
+                width: 70px;
+                height: 70px;
+                margin: -34px 0 0 -34px;
+                background: $lightgrey;
+                // border: 2px solid $mediumgrey;
+            }
+        }
+        &:hover,
+        &:active{
+            color: $blue;
+            cursor: pointer;
+        }
+        a{
+            display: block;
+            width: inherit;
+            height: inherit;
+            text-indent: -999em;
+        }
+    }
+
+
+    /* Rotating text */
+    .flip{
+        float: left;
+        height: 70px;
+        color: $lightgrey;
+        line-height: 70px;
+        font-size: 1.769em;
+        font-weight: 200;
+        word-spacing: 9px;
+        p{
+            margin: 0;
+        }
+        span{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            width: 55px;
+            text-align: center;
+            a{
+                color: $blue;
+                line-height: 24px;
+                border-bottom: 1px dotted $darkgrey;
+                &:hover{
+                    color: $lightgrey;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+    /* Navigation links */
+    ul#items{
+        width: 70px;
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-align: center;
+        li.navItem{
+            position: relative;
+            list-style: none;
+            //display: none;
+            button{
+                display: block;
+                width: 22px;
+                margin: 0 auto;
+                padding: 25px 0;
+                color: $lightgrey;
+                border: none;
+                background: none;
+                border-bottom: 1px solid $darkgrey;
+                overflow: hidden;
+                &:hover{
+                    color: white;
+                }
+            }
+            &:last-child{
+                button{ border-bottom: none; }
+            }
+            span{
+                display: none;
+                position: absolute;
+                width: 80px;
+                left: 50px;
+                padding: 10px;
+                color: #888;
+                text-align: left;
+            }
+        }
+    }
+}

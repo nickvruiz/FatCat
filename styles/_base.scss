@@ -1,0 +1,127 @@
+// Colors
+$red:       #9d1f1f;
+$grey:      #313131;
+$blue:      #0071b7;
+$lblue:     #41ABFF;
+$darkgrey:     #666;
+$lightgrey:    #ccc;
+$mediumgrey:   #333;
+$inputgrey: #ece7e5;
+
+
+// Imports
+@import "compass/css3/transform";
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+@import "compass/css3/text-shadow";
+
+
+// Mixins
+@mixin line( $width ){
+	width: $width;
+	height: 1px;
+	margin-left: 3px;
+	border-top: 1px solid $grey;
+}
+
+
+// Basic global styles
+body,
+html{
+    width: 100%;
+    height: 100%;
+    font: normal 14px/18px 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: $blue;
+}
+
+p{ font-size: 1em; }
+
+h1, h2 {
+    font-weight: 200;
+    letter-spacing: -1px;
+    padding: 0;
+}
+
+h1{
+    font-size: 2.85em;
+    margin: 10px 0 20px 0;
+}
+
+h2{
+    font-size: 1.8em;
+    margin: 0;
+}
+
+h3{
+    font-size: 1.286em;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+// Classes
+.active{
+    display: block!important;
+    z-index: 999!important;
+    opacity: 1!important;
+}
+
+.grey{
+    color: $mediumgrey!important;
+}
+
+.warn{
+    color: #999;
+    &:hover{
+        color: $mediumgrey;
+    }
+}
+
+.slideUp{
+    top: 100%!important;
+}
+
+.slideDown{
+    top: -100%!important;
+}
+
+.menu-exit{
+    height: 75px;
+    margin: 0 0 0 20px;
+    padding: 0;
+    color: $lightgrey;
+    font-size: 1.7em;
+    line-height: 75px;
+    font-weight: 100;
+    background: none;
+}
+
+.close-overlay{
+    width: 26px;
+    height: 26px;
+    color: white;
+    text-align: center;
+    line-height: 51%;
+    border-radius: 100%;
+    border: 1px solid white;
+    background: none;
+    z-index: 999;
+}
+
+.close-portfolio{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-left: -10px;
+    font-size: 1.1em;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 100%;
+    background: none;
+    z-index: 999;
+}

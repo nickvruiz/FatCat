@@ -1,0 +1,1071 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200italic,400italic);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css);
+/* line 17, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 30, ../styles/_base.scss */
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font: normal 14px/18px 'Source Sans Pro', sans-serif;
+  overflow: hidden;
+}
+
+/* line 37, ../styles/_base.scss */
+a {
+  text-decoration: none;
+  color: #0071b7;
+}
+
+/* line 42, ../styles/_base.scss */
+p {
+  font-size: 1em;
+}
+
+/* line 44, ../styles/_base.scss */
+h1, h2 {
+  font-weight: 200;
+  letter-spacing: -1px;
+  padding: 0;
+}
+
+/* line 50, ../styles/_base.scss */
+h1 {
+  font-size: 2.85em;
+  margin: 10px 0 20px 0;
+}
+
+/* line 55, ../styles/_base.scss */
+h2 {
+  font-size: 1.8em;
+  margin: 0;
+}
+
+/* line 60, ../styles/_base.scss */
+h3 {
+  font-size: 1.286em;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* line 68, ../styles/_base.scss */
+.active {
+  display: block !important;
+  z-index: 999 !important;
+  opacity: 1 !important;
+}
+
+/* line 74, ../styles/_base.scss */
+.grey {
+  color: #333333 !important;
+}
+
+/* line 78, ../styles/_base.scss */
+.warn {
+  color: #999;
+}
+/* line 80, ../styles/_base.scss */
+.warn:hover {
+  color: #333333;
+}
+
+/* line 85, ../styles/_base.scss */
+.slideUp {
+  top: 100% !important;
+}
+
+/* line 89, ../styles/_base.scss */
+.slideDown {
+  top: -100% !important;
+}
+
+/* line 93, ../styles/_base.scss */
+.menu-exit {
+  height: 75px;
+  margin: 0 0 0 20px;
+  padding: 0;
+  color: #cccccc;
+  font-size: 1.7em;
+  line-height: 75px;
+  font-weight: 100;
+  background: none;
+}
+
+/* line 104, ../styles/_base.scss */
+.close-overlay {
+  width: 26px;
+  height: 26px;
+  color: white;
+  text-align: center;
+  line-height: 51%;
+  border-radius: 100%;
+  border: 1px solid white;
+  background: none;
+  z-index: 999;
+}
+
+/* line 116, ../styles/_base.scss */
+.close-portfolio {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-left: -10px;
+  font-size: 1.1em;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 100%;
+  background: none;
+  z-index: 999;
+}
+
+/* line 2, ../styles/_forms.scss */
+input[type="submit"],
+button {
+  border: 0;
+}
+/* line 4, ../styles/_forms.scss */
+input[type="submit"]:hover,
+button:hover {
+  cursor: pointer;
+}
+/* line 7, ../styles/_forms.scss */
+input[type="submit"]:focus,
+button:focus {
+  outline: none;
+}
+
+/* line 14, ../styles/_forms.scss */
+input[type="text"],
+textarea,
+.btn {
+  margin: 0 0 20px 0;
+  padding: 10px 20px;
+  border: 0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 26, ../styles/_forms.scss */
+input[type="text"],
+textarea {
+  font-weight: 200;
+  font-style: italic;
+  background: #ece7e5;
+  color: #313131;
+}
+/* line 31, ../styles/_forms.scss */
+input[type="text"]:focus,
+textarea:focus {
+  background: white;
+}
+
+/* line 36, ../styles/_forms.scss */
+.name {
+  width: 20%;
+}
+
+/* line 37, ../styles/_forms.scss */
+.email {
+  width: 30%;
+}
+
+/* line 38, ../styles/_forms.scss */
+.subject {
+  width: 40%;
+}
+
+/* line 39, ../styles/_forms.scss */
+.text {
+  width: 100%;
+  height: 150px;
+  padding-top: 20px;
+}
+
+/* line 45, ../styles/_forms.scss */
+.btn {
+  padding: 10px 40px;
+  color: white;
+  font-weight: 400;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+/* line 55, ../styles/_forms.scss */
+.btn:active {
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* line 63, ../styles/_forms.scss */
+.blue {
+  border-top: 1px solid #0086c9;
+  background: #0071b7;
+  background: -moz-linear-gradient(top, #0071b7 0%, #0071b7 50%, #2756a6 99%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0071b7), color-stop(50%, #0071b7), color-stop(99%, #2756a6));
+  background: -webkit-linear-gradient(top, #0071b7 0%, #0071b7 50%, #2756a6 99%);
+  background: -o-linear-gradient(top, #0071b7 0%, #0071b7 50%, #2756a6 99%);
+  background: -ms-linear-gradient(top, #0071b7 0%, #0071b7 50%, #2756a6 99%);
+  background: linear-gradient(to bottom, #0071b7 0%, #0071b7 50%, #2756a6 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0071b7', endColorstr='#2756a6',GradientType=0 );
+}
+
+/* line 75, ../styles/_forms.scss */
+.meta {
+  margin-left: 15px;
+  padding-left: 15px;
+  color: #ececec;
+  font-weight: 200;
+  font-size: 1.1em;
+  font-style: italic;
+  letter-spacing: 1px;
+  border-left: 1px solid #ececec;
+  opacity: .5;
+}
+/* line 76, ../styles/_forms.scss */
+.meta strong {
+  letter-spacing: normal;
+}
+
+/* line 2, ../styles/_animations.scss */
+.slide-page-top {
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+/* line 6, ../styles/_animations.scss */
+.slide-page-mid {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+/* line 10, ../styles/_animations.scss */
+.slide-page-btm {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+/* line 16, ../styles/_animations.scss */
+.nav-menu {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: translateX(-100px);
+  -moz-transform: translateX(-100px);
+  -ms-transform: translateX(-100px);
+  -o-transform: translateX(-100px);
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+/* line 22, ../styles/_animations.scss */
+.nav-menu-active {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* line 27, ../styles/_animations.scss */
+#overlayblock {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+/* line 32, ../styles/_animations.scss */
+#overlayblock.ng-hide {
+  opacity: 0;
+}
+
+/* line 36, ../styles/_animations.scss */
+#overlayblock.ng-hide-add, #overlayblock.ng-hide-remove {
+  display: block !important;
+}
+
+/* line 41, ../styles/_animations.scss */
+.portfolio-piece.ng-enter,
+.portfolio-piece.ng-leave {
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+/* line 46, ../styles/_animations.scss */
+.portfolio-piece.ng-enter,
+.portfolio-piece.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+/* line 50, ../styles/_animations.scss */
+.portfolio-piece.ng-leave,
+.portfolio-piece.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+/* line 55, ../styles/_animations.scss */
+.linear {
+  -webkit-transition: all 250ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: all 250ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -ms-transition: all 250ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: all 250ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: all 250ms cubic-bezier(0.25, 0.25, 0.75, 0.75);
+}
+
+/* line 63, ../styles/_animations.scss */
+.ease-in-out {
+  -webkit-transition: all 500ms cubic-bezier(0.86, 0, 0.07, 1);
+  -moz-transition: all 500ms cubic-bezier(0.86, 0, 0.07, 1);
+  -ms-transition: all 500ms cubic-bezier(0.86, 0, 0.07, 1);
+  -o-transition: all 500ms cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 500ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+/* line 71, ../styles/_animations.scss */
+.bounce {
+  -webkit-transition: all 300ms cubic-bezier(0.55, 0.23, 0, 1);
+  -webkit-transition: all 300ms cubic-bezier(0.55, 0.23, 0, 1.65);
+  -moz-transition: all 300ms cubic-bezier(0.55, 0.23, 0, 1.65);
+  -ms-transition: all 300ms cubic-bezier(0.55, 0.23, 0, 1.65);
+  -o-transition: all 300ms cubic-bezier(0.55, 0.23, 0, 1.65);
+  transition: all 300ms cubic-bezier(0.55, 0.23, 0, 1.65);
+}
+
+/*
+#   Built By FatCat =^^=
+#   www.fatcatonline.net
+*/
+/*---------------------------------*/
+/* Main Window */
+/* line 9, ../styles/_app.scss */
+#main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Contact Page */
+/* line 17, ../styles/_app.scss */
+#overlayblock {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  color: white;
+  background: url("../images/wrapper-bg.png") repeat top left;
+  z-index: 999;
+}
+/* line 28, ../styles/_app.scss */
+#overlayblock header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* line 36, ../styles/_app.scss */
+.wrapper-contact,
+.wrapper-portfolio {
+  position: absolute;
+  height: 700px;
+  top: 50%;
+}
+/* line 40, ../styles/_app.scss */
+.wrapper-contact h1,
+.wrapper-portfolio h1 {
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+}
+
+/* line 46, ../styles/_app.scss */
+.wrapper-contact {
+  width: 50%;
+  left: 25%;
+  margin-top: -227px;
+}
+
+/* line 52, ../styles/_app.scss */
+.wrapper-portfolio {
+  width: 890px;
+  left: 50%;
+  margin: -280px 0 0 -445px;
+}
+
+/* line 58, ../styles/_app.scss */
+.portfolio-extras-main-block {
+  position: relative;
+  width: 780px;
+  height: 560px;
+  float: left;
+  margin-right: 10px;
+}
+/* line 64, ../styles/_app.scss */
+.portfolio-extras-main-block .info-block {
+  position: absolute;
+  width: 180px;
+  padding: 10px;
+  left: -160px;
+  top: 20px;
+  line-height: 25px;
+  font-weight: 100;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+}
+/* line 75, ../styles/_app.scss */
+.portfolio-extras-main-block p {
+  margin-bottom: 20px;
+}
+/* line 78, ../styles/_app.scss */
+.portfolio-extras-main-block h3 {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+/* line 84, ../styles/_app.scss */
+.portfolio-extras-thumbs-block {
+  width: 100px;
+  float: left;
+  margin: 0;
+}
+/* line 88, ../styles/_app.scss */
+.portfolio-extras-thumbs-block li {
+  width: 100%;
+  height: 72px;
+}
+/* line 91, ../styles/_app.scss */
+.portfolio-extras-thumbs-block li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+}
+/* line 97, ../styles/_app.scss */
+.portfolio-extras-thumbs-block li img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 104, ../styles/_app.scss */
+.contact-form {
+  margin-top: 30px;
+}
+
+/* line 108, ../styles/_app.scss */
+#content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* line 119, ../styles/_app.scss */
+#workblock,
+#homeblock,
+#aboutblock {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Home Page Styling */
+/* line 129, ../styles/_app.scss */
+#homeblock {
+  top: 0;
+  background: url("../images/bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* line 140, ../styles/_app.scss */
+#homeblock .logo {
+  width: 373px;
+  height: 156px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -78px 0 0 -186.5px;
+  overflow: hidden;
+  text-indent: -999em;
+  background: url("../images/logo-fatcat.png") no-repeat center;
+  opacity: 0;
+}
+/* line 151, ../styles/_app.scss */
+#homeblock .logo h1, #homeblock .logo small {
+  margin-left: -999em;
+}
+
+/* Portfolio Page Styling */
+/* line 159, ../styles/_app.scss */
+#workblock {
+  top: -100%;
+  background: black;
+}
+
+/* line 164, ../styles/_app.scss */
+.portfolio-sidebar {
+  width: 15%;
+  height: 100%;
+  float: left;
+  background: #1a1a1a;
+  -webkit-box-shadow: black 5px 0 10px;
+  -moz-box-shadow: black 5px 0 10px;
+  box-shadow: black 5px 0 10px;
+}
+/* line 170, ../styles/_app.scss */
+.portfolio-sidebar h3 {
+  color: #c8c8c8;
+  text-indent: 40px;
+  margin: 0;
+  padding: 40px 0 20px 0;
+  border-top: 1px solid #272727;
+}
+
+/* line 179, ../styles/_app.scss */
+.portfolio-sidebar-box {
+  width: 100%;
+  margin-top: 105px;
+  border-top: 1px solid black;
+}
+
+/* line 185, ../styles/_app.scss */
+ul.portfolio-categories {
+  margin: 0;
+  padding: 0;
+}
+/* line 188, ../styles/_app.scss */
+ul.portfolio-categories li {
+  width: 100%;
+  height: 50px;
+  margin: 0 0 1px 0;
+}
+/* line 193, ../styles/_app.scss */
+ul.portfolio-categories i {
+  margin-right: 10px;
+  font-size: .85em;
+  opacity: .5;
+}
+/* line 198, ../styles/_app.scss */
+ul.portfolio-categories a {
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #666666;
+  font-size: 1.286em;
+  text-transform: uppercase;
+  font-weight: 100;
+  text-indent: 20px;
+}
+/* line 209, ../styles/_app.scss */
+ul.portfolio-categories .active, ul.portfolio-categories a:hover {
+  position: relative;
+  color: white;
+  background: #282828;
+}
+/* line 213, ../styles/_app.scss */
+ul.portfolio-categories .active:before, ul.portfolio-categories a:hover:before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  background: #0071b7;
+  top: 0;
+  left: 0;
+}
+
+/* line 225, ../styles/_app.scss */
+ul.portfolio-pieces-stage {
+  width: 85%;
+  height: 100%;
+  margin: 0;
+  float: left;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* line 234, ../styles/_app.scss */
+.portfolio-piece {
+  list-style: none;
+  width: 100%;
+  height: 433px;
+  overflow: hidden;
+  float: left;
+  border-bottom: 1px solid #313131;
+}
+/* line 241, ../styles/_app.scss */
+.portfolio-piece .portfolio-main-image {
+  position: relative;
+  display: block;
+  width: 50%;
+  height: 433px;
+  float: left;
+  overflow: hidden;
+}
+/* line 248, ../styles/_app.scss */
+.portfolio-piece .portfolio-main-image span {
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 40px;
+  top: 25px;
+  right: -2px;
+  text-align: center;
+  line-height: 40px;
+  color: black;
+  border-radius: 2px;
+  background: url("../images/patterns/striped_lens.png") repeat top left;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+/* line 264, ../styles/_app.scss */
+.portfolio-piece .portfolio-main-image:before, .portfolio-piece .portfolio-main-image:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../images/portfolio-piece-main-shadow-r.png") repeat-y top right, url("../images/portfolio-piece-main-shadow-l.png") repeat-y top left;
+}
+/* line 272, ../styles/_app.scss */
+.portfolio-piece .portfolio-main-image:before {
+  border-left: 1px solid black;
+}
+/* line 276, ../styles/_app.scss */
+.portfolio-piece img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 282, ../styles/_app.scss */
+.portfolio-piece-info-block {
+  width: 50%;
+  height: 100%;
+  float: left;
+  font-weight: 400;
+  text-transform: uppercase;
+  background: url("../images/patterns/striped_lens.png") repeat top left;
+}
+
+/* line 291, ../styles/_app.scss */
+.portfolio-description {
+  margin-top: 20px;
+}
+/* line 293, ../styles/_app.scss */
+.portfolio-description p {
+  width: 90%;
+  margin: 0 0 10px 0;
+  line-height: 25px;
+}
+
+/* line 300, ../styles/_app.scss */
+.info-row {
+  margin-left: 60px;
+}
+
+/* line 304, ../styles/_app.scss */
+.info-header {
+  color: black;
+  text-shadow: 1px 1px 0 white;
+}
+/* line 307, ../styles/_app.scss */
+.info-header h1 {
+  margin: 40px 0 10px 0;
+  line-height: 30px;
+}
+
+/* line 313, ../styles/_app.scss */
+.info-description {
+  height: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 60px;
+  border-bottom: 1px solid black;
+  background: #222;
+}
+/* line 321, ../styles/_app.scss */
+.info-description p {
+  float: left;
+  font-weight: 400;
+  letter-spacing: .85px;
+  color: #cccccc;
+}
+/* line 326, ../styles/_app.scss */
+.info-description p:first-child {
+  padding: 0 20px;
+  margin-right: 20px;
+  border-right: 1px solid #444;
+}
+
+/* line 334, ../styles/_app.scss */
+.info-extras {
+  color: black;
+  text-shadow: 1px 1px 0 white;
+}
+/* line 337, ../styles/_app.scss */
+.info-extras h3 {
+  font-style: italic;
+  margin: 0 15px 5px 2px;
+}
+/* line 341, ../styles/_app.scss */
+.info-extras .fa-bolt {
+  width: 25px;
+  height: 25px;
+  margin-top: -12px;
+  border: 1px solid black;
+  color: black;
+  text-align: center;
+  border-radius: 25px;
+  line-height: 25px;
+}
+
+/* line 353, ../styles/_app.scss */
+.portfolio-title-line {
+  width: 55px;
+  height: 1px;
+  margin-left: 3px;
+  border-top: 1px solid #313131;
+}
+
+/* line 357, ../styles/_app.scss */
+.portfolio-extras {
+  margin-top: 30px;
+}
+/* line 359, ../styles/_app.scss */
+.portfolio-extras li {
+  height: 40px;
+  list-style: none;
+  margin: 0 10px 0 0;
+  float: left;
+}
+/* line 365, ../styles/_app.scss */
+.portfolio-extras .btn {
+  color: #cccccc;
+  background: #222;
+  padding: 10px 15px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+/* line 373, ../styles/_app.scss */
+.portfolio-extras .btn:hover {
+  color: white;
+  background: #0071b7;
+}
+
+/* About Page Styling */
+/* line 382, ../styles/_app.scss */
+#aboutblock {
+  bottom: -100%;
+  background: white;
+}
+/* line 385, ../styles/_app.scss */
+#aboutblock header {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  line-height: 120px;
+  text-align: center;
+  background: #666666;
+}
+/* line 392, ../styles/_app.scss */
+#aboutblock header h1 {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 4.929em;
+  font-style: italic;
+}
+/* line 399, ../styles/_app.scss */
+#aboutblock header a {
+  display: block;
+  position: absolute;
+  height: 80px;
+  width: 20px;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 20px;
+  color: white;
+  font-weight: 200;
+  font-size: 2em;
+  line-height: 80px;
+  background: #333333;
+  cursor: pointer;
+}
+/* line 418, ../styles/_app.scss */
+#aboutblock .content {
+  width: 61%;
+  margin: 0 auto;
+  font-weight: 200;
+  font-size: 2.243em;
+  line-height: 55px;
+  color: #666666;
+}
+/* line 425, ../styles/_app.scss */
+#aboutblock .content p {
+  margin: 60px 0;
+  padding: 0;
+}
+/* line 429, ../styles/_app.scss */
+#aboutblock .content span {
+  color: #0071b7;
+  font-weight: 400;
+  font-style: italic;
+}
+/* line 434, ../styles/_app.scss */
+#aboutblock .content .line {
+  width: 100px;
+  height: 1px;
+  margin-left: 3px;
+  border-top: 1px solid #313131;
+}
+
+/* Nav Button */
+/* line 442, ../styles/_app.scss */
+.nav-menu {
+  margin: 20px 0 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  /* Rotating text */
+  /* Navigation links */
+}
+/* line 448, ../styles/_app.scss */
+.nav-menu .menu {
+  display: block;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  margin-right: 20px;
+  float: left;
+  text-align: center;
+  line-height: 70px;
+  z-index: 4;
+}
+/* line 458, ../styles/_app.scss */
+.nav-menu .menu .list {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  top: 50%;
+  left: 50%;
+  margin: -11px 0 0 -13px;
+  color: white;
+  font-size: 1.15em;
+  text-align: center;
+  line-height: 23px;
+  border-radius: 100%;
+  background: none;
+}
+/* line 471, ../styles/_app.scss */
+.nav-menu .menu .list:hover {
+  color: #0071b7;
+}
+/* line 475, ../styles/_app.scss */
+.nav-menu .menu .circle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  line-height: 100%;
+  z-index: -1;
+}
+/* line 484, ../styles/_app.scss */
+.nav-menu .menu .circle span {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  margin: -14px 0 0 -14px;
+  padding: 0;
+  line-height: 100%;
+  border-radius: 100%;
+  background: none;
+}
+/* line 498, ../styles/_app.scss */
+.nav-menu .menu .circle .menu-active {
+  width: 70px;
+  height: 70px;
+  margin: -34px 0 0 -34px;
+  background: #cccccc;
+}
+/* line 507, ../styles/_app.scss */
+.nav-menu .menu:hover, .nav-menu .menu:active {
+  color: #0071b7;
+  cursor: pointer;
+}
+/* line 511, ../styles/_app.scss */
+.nav-menu .menu a {
+  display: block;
+  width: inherit;
+  height: inherit;
+  text-indent: -999em;
+}
+/* line 521, ../styles/_app.scss */
+.nav-menu .flip {
+  float: left;
+  height: 70px;
+  color: #cccccc;
+  line-height: 70px;
+  font-size: 1.769em;
+  font-weight: 200;
+  word-spacing: 9px;
+}
+/* line 529, ../styles/_app.scss */
+.nav-menu .flip p {
+  margin: 0;
+}
+/* line 532, ../styles/_app.scss */
+.nav-menu .flip span {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 55px;
+  text-align: center;
+}
+/* line 538, ../styles/_app.scss */
+.nav-menu .flip span a {
+  color: #0071b7;
+  line-height: 24px;
+  border-bottom: 1px dotted #666666;
+}
+/* line 542, ../styles/_app.scss */
+.nav-menu .flip span a:hover {
+  color: #cccccc;
+  cursor: pointer;
+}
+/* line 552, ../styles/_app.scss */
+.nav-menu ul#items {
+  width: 70px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  text-align: center;
+}
+/* line 558, ../styles/_app.scss */
+.nav-menu ul#items li.navItem {
+  position: relative;
+  list-style: none;
+}
+/* line 562, ../styles/_app.scss */
+.nav-menu ul#items li.navItem button {
+  display: block;
+  width: 22px;
+  margin: 0 auto;
+  padding: 25px 0;
+  color: #cccccc;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #666666;
+  overflow: hidden;
+}
+/* line 572, ../styles/_app.scss */
+.nav-menu ul#items li.navItem button:hover {
+  color: white;
+}
+/* line 577, ../styles/_app.scss */
+.nav-menu ul#items li.navItem:last-child button {
+  border-bottom: none;
+}
+/* line 579, ../styles/_app.scss */
+.nav-menu ul#items li.navItem span {
+  display: none;
+  position: absolute;
+  width: 80px;
+  left: 50px;
+  padding: 10px;
+  color: #888;
+  text-align: left;
+}
