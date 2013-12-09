@@ -61,7 +61,7 @@ textarea{
 }
 
 .blue{
-    border-top: 1px solid #0086c9;
+    border-top: 1px solid #0086c9 !important;
     background: rgb(0,113,183);
     background: -moz-linear-gradient(top,  rgba(0,113,183,1) 0%, rgba(0,113,183,1) 50%, rgba(39,86,166,1) 99%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,113,183,1)), color-stop(50%,rgba(0,113,183,1)), color-stop(99%,rgba(39,86,166,1)));

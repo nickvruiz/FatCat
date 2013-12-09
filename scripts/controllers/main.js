@@ -1,13 +1,7 @@
 'use strict';
 
 angular.module('NewApp')
-  .controller('MainCtrl', function ($scope, $timeout, submitContactForm) {
-
-    $scope.pages = [
-      { icon:'desktop',  action:"slide('top')"},
-      { icon:'envelope', action:'fade()'},
-      { icon:'info',     action:"slide('btm')"}
-    ];
+  .controller('MainCtrl', function ($scope, submitContactForm) {
 
     $scope.portfolioCategories = [
       { name: 'all',
@@ -49,12 +43,12 @@ angular.module('NewApp')
       },
       { id: 2,
         client: 'jac vanek',
-        excerpt: 'repsonsive design / development / ecommerce',
-        description: 'Description',
+        excerpt: 'repsonsive design / wordpress / ecommerce',
+        description: '<p>"JAC VANEK" was in need of a new website, blog and online shop.</p><p>So, we utlized the CMS power of Wordpress / Woocommerce together to create a central hub for managing the new site, blog and online store.</p>',
         category: 'web',
         icon: 'desktop',
         link: 'http://jacvanek.com',
-        extras:[0]
+        extras:[0,1]
       },
       { id: 3,
         client: 'glb',
@@ -71,6 +65,19 @@ angular.module('NewApp')
     // $scope.show = true;
 
     $scope.selectedIndex = $scope.portfolioId = $scope.extraId = 0;
+
+    // Shitty tooltip function - bootstrap it / directive...
+    $scope.tooltip = function (tip) {
+      if(tip === 'portfolio') {
+        $scope.portfolioTip = !$scope.portfolioTip;
+      }
+      if(tip === 'contact') {
+        $scope.contactTip = !$scope.contactTip;
+      }
+      if(tip === 'about') {
+        $scope.aboutTip = !$scope.aboutTip;
+      }
+    }
 
     $scope.fade = function () {
       $scope.show = !$scope.show;
@@ -103,11 +110,17 @@ angular.module('NewApp')
 
     $scope.navMenuTransition = function () {
       $scope.move = !$scope.move;
-      $scope.meta = !$scope.meta;
+      // $scope.meta = !$scope.meta;
       $scope.grow = false;
     }
 
     $scope.slide = function (dir) {
+      if(dir === 'top') {
+        $scope.hideResume = true;
+        $scope.categoryFilter = '';
+      } else {
+        $scope.hideResume = false;
+      }
       $scope.navMenuTransition();
       $scope.slideDir = 'slide-page-' + dir;
     }
@@ -123,7 +136,8 @@ angular.module('NewApp')
         usubject: $scope.subject,
         umessage: $scope.message
       }];
-      submitContactForm.sendMail('hello');
+
+      submitContactForm.sendMail(data);
     }
 
   });

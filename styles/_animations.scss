@@ -24,16 +24,16 @@
     opacity: 1;
 }
 
-#overlayblock {
+.fade {
   @include transition(all 0.3s ease-in-out);
   opacity: 1;
 }
 
-#overlayblock.ng-hide {
+.fade.ng-hide {
     opacity: 0;
 }
 
-#overlayblock.ng-hide-add, #overlayblock.ng-hide-remove {
+.fade.ng-hide-add, .fade.ng-hide-remove {
     display:block!important;
 }
 

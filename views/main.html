@@ -9,21 +9,21 @@
                 <span class="bounce" ng-class="{'menu-active': grow}">&nbsp;</span>
             </div>
         </div>
-        <div class="flip" ng-hide="meta">
+        <div class="flip fade" ng-hide="move">
             <p>We&nbsp;<span><a id="slot" ng-click="slide('top')">build</a></span>&nbsp;web&nbsp;stuff.</p>
         </div>
-        <ul id="items">
-            <!-- <li ng-show="grow" ng-repeat="page in pages" class="navItem">
-                <button ng-click="{{ page.action }}"><i class="fa fa-{{ page.icon }} fa-lg"></i></button>
-            </li> -->
-            <li ng-show="grow" class="navItem">
+        <ul id="items" ng-show="grow">
+            <li ng-mouseenter="tooltip('portfolio')" ng-mouseleave="tooltip('portfolio')" class="navItem">
                 <button ng-click="slide('top')"><i class="fa fa-desktop fa-lg"></i></button>
+                <span ng-show="portfolioTip" class="fade"><i class="fa fa-caret-left"></i>Portfolio</span>
             </li>
-            <li ng-show="grow" class="navItem">
+            <li ng-mouseenter="tooltip('contact')" ng-mouseleave="tooltip('contact')" class="navItem">
                 <button ng-click="showContactPage()"><i class="fa fa-envelope fa-lg"></i></button>
+                <span ng-show="contactTip" class="fade"><i class="fa fa-caret-left"></i>Contact</span>
             </li>
-            <li ng-show="grow" class="navItem">
+            <li ng-mouseenter="tooltip('about')" ng-mouseleave="tooltip('about')" class="navItem">
                 <button ng-click="slide('btm')"><i class="fa fa-info fa-lg"></i></button>
+                <span ng-show="aboutTip" class="fade"><i class="fa fa-caret-left"></i>About</span>
             </li>
         </ul>
     </nav>
@@ -35,13 +35,19 @@
     </nav>
     <!-- #End: Navigation -->
 
+    <!-- Download Resume -->
+    <a ng-hide="hideResume" class="resume blue fade" href="/pdf/nick-ruiz-fatcat-resume.pdf" target="_blank" title="Resume Nick Ruiz">
+        <i class="fa fa-cloud-download"></i>RESUME&nbsp;(1.5MB)
+    </a>
+    <!-- #End: Download -->
+
 
     <!-- MAIN CONTENT
     -------------------------------------->
     <div id="content" class="ease-in-out {{ slideDir }}">
 
-        <!-- Work Page -->
-        <div id="workblock">
+        <!-- Portfolio Page -->
+        <div id="portfolio-block">
             <div class="portfolio-sidebar">
                 <div class="portfolio-sidebar-box">
                     <h3>OUR WORK</h3>
@@ -58,7 +64,6 @@
                 <li class="portfolio-piece" ng-repeat="piece in portfolioPieces | filter: categoryFilter">
                     <a class="portfolio-main-image" href="" title="">
                         <img ng-src="images/portfolio/{{ piece.id }}/main.jpg" border="" alt="">
-                        <!-- <span><i class="fa fa-{{ piece.icon }}"></i></span> -->
                     </a>
                     <div class="portfolio-piece-info-block">
                         <div class="info-description">
@@ -90,11 +95,11 @@
                 </li>
             </ul>
         </div>
-        <!-- #End: Work -->
+        <!-- #End: Portfolio -->
 
 
         <!-- Home Page -->
-        <div id="homeblock">
+        <div id="home-block">
             <div class="logo linear" ng-class="{'active': !show}">
                 <h1>Fat Cat</h1>
                 <small>Concise company description</small>
@@ -104,23 +109,23 @@
 
 
         <!-- About Page -->
-        <div id="aboutblock">
+        <div id="about-block">
             <header>
                 <h1>"Every pixel counts"</h1>
             </header>
             <div class="content">
                 <p>Fat Cat is a group of media professionals based in <span>San Diego</span> dedicated to helping businesses boost their digital presence. Primarily focusing on small businesses and startups, Fat Cat provides high quality Web Design, Development, Photography, Video and Motion Graphics.</p>
                 <p>Offering a wide range of services, Fat Cat aims at creating and sustaining long-term partnerships.</p>
-                <div class="line"></div>
             </div>
         </div>
         <!-- #End: About -->
 
-    </div> <!-- #End: Content -->
+    </div>
+    <!-- #End: Content -->
 
 
     <!-- Overlay Contact Page -->
-    <div id="overlayblock" ng-show="show">
+    <div id="overlayblock" class="fade" ng-show="show">
         <header>
             <button class="close-overlay" ng-click="fade()">&times;</button>
         </header>
@@ -128,10 +133,10 @@
             <h1>LET'S BE FRIENDS</h1>
             <i class="fa fa-info"></i><span class="meta">All fields below are required</span>
             <form class="contact-form" ng-submit="contactFatCat();">
-                <input class="name" type="text" placeholder="Name" ng-model="username"><br />
-                <input class="email" type="text" placeholder="Email" ng-model="email"><br />
-                <input class="subject" type="text" placeholder="Subject" ng-model="subject"><br />
-                <textarea class="text" placeholder="Meow..." ng-model="message"></textarea><br />
+                <input class="name" type="text" placeholder="Name" ng-model="username" required /><br />
+                <input class="email" type="text" placeholder="Email" ng-model="email" required /><br />
+                <input class="subject" type="text" placeholder="Subject" ng-model="subject" required /><br />
+                <textarea class="text" placeholder="Meow..." ng-model="message" required /></textarea><br />
                 <input class="btn blue" type="submit" value="BLAST OFF">
                 <span class="meta"><strong>info</strong>@fatcatonline.net</span>
             </form>

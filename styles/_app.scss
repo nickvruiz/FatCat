@@ -114,9 +114,9 @@
     left: 0;
 }
 
-#workblock,
-#homeblock,
-#aboutblock{
+#home-block,
+#about-block,
+#portfolio-block{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -126,7 +126,7 @@
 
 
 /* Home Page Styling */
-#homeblock{
+#home-block{
     top: 0;
     background: url('../images/bg.jpg') no-repeat center center fixed;
 
@@ -156,7 +156,7 @@
 
 
 /* Portfolio Page Styling */
-#workblock{
+#portfolio-block{
     top: -100%;
     background: black;
 }
@@ -213,11 +213,11 @@ ul.portfolio-categories{
         &:before{
             content: '';
             position: absolute;
-            width: 5px;
+            width: 1px;
             height: 100%;
             background: $blue;
             top: 0;
-            left: 0;
+            right: 0;
         }
     }
 }
@@ -379,8 +379,9 @@ ul.portfolio-pieces-stage{
 
 
 /* About Page Styling */
-#aboutblock{
+#about-block{
     bottom:-100%;
+    text-align: center;
     background: white;
     header{
         position: relative;
@@ -445,146 +446,184 @@ ul.portfolio-pieces-stage{
     top: 0;
     left: 0;
     z-index: 999;
-    .menu{
+}
+
+.menu{
+    display: block;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    margin-right: 20px;
+    float: left;
+    text-align: center;
+    line-height: 70px;
+    z-index: 4;
+    &:hover,
+    &:active{
+        color: $blue;
+        cursor: pointer;
+    }
+    a{
         display: block;
+        width: inherit;
+        height: inherit;
+        text-indent: -999em;
+    }
+}
+
+.list{
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 50%;
+    left: 50%;
+    margin: -11px 0 0 -13px;
+    color: white;
+    font-size: 1.15em;
+    text-align: center;
+    line-height: 23px;
+    border-radius: 100%;
+    background: none;
+    &:hover{
+        color: $blue;
+    }
+}
+
+.circle{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 100%;
+    z-index: -1;
+    span{
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        top: 50%;
+        left: 50%;
+        margin: -14px 0 0 -14px;
+        padding: 0;
+        line-height: 100%;
+        border-radius: 100%;
+        // border: 2px solid transparent;
+        background: none;
+    }
+    .menu-active{
         width: 70px;
         height: 70px;
-        position: relative;
-        margin-right: 20px;
-        float: left;
-        text-align: center;
-        line-height: 70px;
-        z-index: 4;
-        .list{
-            position: absolute;
-            width: 26px;
-            height: 26px;
-            top: 50%;
-            left: 50%;
-            margin: -11px 0 0 -13px;
-            color: white;
-            font-size: 1.15em;
-            text-align: center;
-            line-height: 23px;
-            border-radius: 100%;
-            background: none;
-            &:hover{
-                color: $blue;
-            }
-        }
-        .circle{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            text-align: center;
-            line-height: 100%;
-            z-index: -1;
-            span{
-                position: absolute;
-                display: block;
-                width: 30px;
-                height: 30px;
-                top: 50%;
-                left: 50%;
-                margin: -14px 0 0 -14px;
-                padding: 0;
-                line-height: 100%;
-                border-radius: 100%;
-                // border: 2px solid transparent;
-                background: none;
-            }
-            .menu-active{
-                width: 70px;
-                height: 70px;
-                margin: -34px 0 0 -34px;
-                background: $lightgrey;
-                // border: 2px solid $mediumgrey;
-            }
-        }
-        &:hover,
-        &:active{
-            color: $blue;
-            cursor: pointer;
-        }
-        a{
-            display: block;
-            width: inherit;
-            height: inherit;
-            text-indent: -999em;
-        }
+        margin: -34px 0 0 -34px;
+        background: $lightgrey;
+        // border: 2px solid $mediumgrey;
     }
+}
 
 
-    /* Rotating text */
-    .flip{
-        float: left;
-        height: 70px;
-        color: $lightgrey;
-        line-height: 70px;
-        font-size: 1.769em;
-        font-weight: 200;
-        word-spacing: 9px;
-        p{
-            margin: 0;
-        }
-        span{
-            display: inline-block;
-            margin: 0;
-            padding: 0;
-            width: 55px;
-            text-align: center;
-            a{
-                color: $blue;
-                line-height: 24px;
-                border-bottom: 1px dotted $darkgrey;
-                &:hover{
-                    color: $lightgrey;
-                    cursor: pointer;
-                }
-            }
-        }
+/* Rotating text */
+.flip{
+    float: left;
+    height: 70px;
+    color: $lightgrey;
+    line-height: 70px;
+    font-size: 1.769em;
+    font-weight: 200;
+    word-spacing: 9px;
+    p{
+        margin: 0;
     }
-
-
-    /* Navigation links */
-    ul#items{
-        width: 70px;
+    span{
+        display: inline-block;
         margin: 0;
         padding: 0;
-        color: white;
+        width: 55px;
         text-align: center;
-        li.navItem{
-            position: relative;
-            list-style: none;
-            //display: none;
-            button{
-                display: block;
-                width: 22px;
-                margin: 0 auto;
-                padding: 25px 0;
+        a{
+            color: $blue;
+            line-height: 24px;
+            border-bottom: 1px dotted $darkgrey;
+            &:hover{
                 color: $lightgrey;
-                border: none;
-                background: none;
-                border-bottom: 1px solid $darkgrey;
-                overflow: hidden;
-                &:hover{
-                    color: white;
-                }
-            }
-            &:last-child{
-                button{ border-bottom: none; }
-            }
-            span{
-                display: none;
-                position: absolute;
-                width: 80px;
-                left: 50px;
-                padding: 10px;
-                color: #888;
-                text-align: left;
+                cursor: pointer;
             }
         }
+    }
+}
+
+
+/* Navigation links */
+ul#items{
+    width: 70px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+    clear: both;
+    li.navItem{
+        position: relative;
+        list-style: none;
+        //display: none;
+        span{
+            display: none;
+            position: absolute;
+            display: block;
+            padding: 0 10px;
+            height: 25px;
+            line-height: 25px;
+            top: 0;
+            left: 60px;
+            margin-top: 20px;
+            color: $lightgrey;
+            background: $blue;
+            font-weight: 100;
+            border-radius: 3px;
+            text-transform: uppercase;
+            font-size: .75em;
+            i{
+                position: absolute;
+                left: -4px;
+                top: 0;
+                line-height: 25px;
+                color: $blue;
+            }
+        }
+        button{
+            display: block;
+            width: 22px;
+            margin: 0 auto;
+            padding: 25px 0;
+            color: $lightgrey;
+            border: none;
+            background: none;
+            border-bottom: 1px solid $darkgrey;
+            overflow: hidden;
+            &:hover{
+                color: white;
+            }
+        }
+        &:last-child{
+            button{ border-bottom: none; }
+        }
+    }
+}
+
+.resume{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: $lightgrey;
+    padding: 0 15px;
+    border-radius: 2px;
+    height: 30px;
+    font-weight: 100;
+    line-height: 30px;
+    z-index: 999;
+    i{
+        line-height: 28px;
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid $blue;
     }
 }

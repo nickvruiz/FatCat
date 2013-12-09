@@ -344,7 +344,7 @@ textarea:focus {
 }
 
 /* line 27, ../styles/_animations.scss */
-#overlayblock {
+.fade {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
@@ -353,12 +353,12 @@ textarea:focus {
 }
 
 /* line 32, ../styles/_animations.scss */
-#overlayblock.ng-hide {
+.fade.ng-hide {
   opacity: 0;
 }
 
 /* line 36, ../styles/_animations.scss */
-#overlayblock.ng-hide-add, #overlayblock.ng-hide-remove {
+.fade.ng-hide-add, .fade.ng-hide-remove {
   display: block !important;
 }
 
@@ -543,9 +543,9 @@ textarea:focus {
 }
 
 /* line 119, ../styles/_app.scss */
-#workblock,
-#homeblock,
-#aboutblock {
+#home-block,
+#about-block,
+#portfolio-block {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -556,7 +556,7 @@ textarea:focus {
 
 /* Home Page Styling */
 /* line 129, ../styles/_app.scss */
-#homeblock {
+#home-block {
   top: 0;
   background: url("../images/bg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -565,7 +565,7 @@ textarea:focus {
   background-size: cover;
 }
 /* line 140, ../styles/_app.scss */
-#homeblock .logo {
+#home-block .logo {
   width: 373px;
   height: 156px;
   position: absolute;
@@ -578,13 +578,13 @@ textarea:focus {
   opacity: 0;
 }
 /* line 151, ../styles/_app.scss */
-#homeblock .logo h1, #homeblock .logo small {
+#home-block .logo h1, #home-block .logo small {
   margin-left: -999em;
 }
 
 /* Portfolio Page Styling */
 /* line 159, ../styles/_app.scss */
-#workblock {
+#portfolio-block {
   top: -100%;
   background: black;
 }
@@ -654,11 +654,11 @@ ul.portfolio-categories .active, ul.portfolio-categories a:hover {
 ul.portfolio-categories .active:before, ul.portfolio-categories a:hover:before {
   content: '';
   position: absolute;
-  width: 5px;
+  width: 1px;
   height: 100%;
   background: #0071b7;
   top: 0;
-  left: 0;
+  right: 0;
 }
 
 /* line 225, ../styles/_app.scss */
@@ -841,12 +841,13 @@ ul.portfolio-pieces-stage {
 
 /* About Page Styling */
 /* line 382, ../styles/_app.scss */
-#aboutblock {
+#about-block {
   bottom: -100%;
+  text-align: center;
   background: white;
 }
-/* line 385, ../styles/_app.scss */
-#aboutblock header {
+/* line 386, ../styles/_app.scss */
+#about-block header {
   position: relative;
   width: 100%;
   height: 120px;
@@ -854,16 +855,16 @@ ul.portfolio-pieces-stage {
   text-align: center;
   background: #666666;
 }
-/* line 392, ../styles/_app.scss */
-#aboutblock header h1 {
+/* line 393, ../styles/_app.scss */
+#about-block header h1 {
   margin: 0;
   padding: 0;
   color: white;
   font-size: 4.929em;
   font-style: italic;
 }
-/* line 399, ../styles/_app.scss */
-#aboutblock header a {
+/* line 400, ../styles/_app.scss */
+#about-block header a {
   display: block;
   position: absolute;
   height: 80px;
@@ -879,8 +880,8 @@ ul.portfolio-pieces-stage {
   background: #333333;
   cursor: pointer;
 }
-/* line 418, ../styles/_app.scss */
-#aboutblock .content {
+/* line 419, ../styles/_app.scss */
+#about-block .content {
   width: 61%;
   margin: 0 auto;
   font-weight: 200;
@@ -888,19 +889,19 @@ ul.portfolio-pieces-stage {
   line-height: 55px;
   color: #666666;
 }
-/* line 425, ../styles/_app.scss */
-#aboutblock .content p {
+/* line 426, ../styles/_app.scss */
+#about-block .content p {
   margin: 60px 0;
   padding: 0;
 }
-/* line 429, ../styles/_app.scss */
-#aboutblock .content span {
+/* line 430, ../styles/_app.scss */
+#about-block .content span {
   color: #0071b7;
   font-weight: 400;
   font-style: italic;
 }
-/* line 434, ../styles/_app.scss */
-#aboutblock .content .line {
+/* line 435, ../styles/_app.scss */
+#about-block .content .line {
   width: 100px;
   height: 1px;
   margin-left: 3px;
@@ -908,18 +909,17 @@ ul.portfolio-pieces-stage {
 }
 
 /* Nav Button */
-/* line 442, ../styles/_app.scss */
+/* line 443, ../styles/_app.scss */
 .nav-menu {
   margin: 20px 0 0 20px;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
-  /* Rotating text */
-  /* Navigation links */
 }
-/* line 448, ../styles/_app.scss */
-.nav-menu .menu {
+
+/* line 451, ../styles/_app.scss */
+.menu {
   display: block;
   width: 70px;
   height: 70px;
@@ -930,8 +930,21 @@ ul.portfolio-pieces-stage {
   line-height: 70px;
   z-index: 4;
 }
-/* line 458, ../styles/_app.scss */
-.nav-menu .menu .list {
+/* line 462, ../styles/_app.scss */
+.menu:hover, .menu:active {
+  color: #0071b7;
+  cursor: pointer;
+}
+/* line 466, ../styles/_app.scss */
+.menu a {
+  display: block;
+  width: inherit;
+  height: inherit;
+  text-indent: -999em;
+}
+
+/* line 474, ../styles/_app.scss */
+.list {
   position: absolute;
   width: 26px;
   height: 26px;
@@ -945,12 +958,13 @@ ul.portfolio-pieces-stage {
   border-radius: 100%;
   background: none;
 }
-/* line 471, ../styles/_app.scss */
-.nav-menu .menu .list:hover {
+/* line 487, ../styles/_app.scss */
+.list:hover {
   color: #0071b7;
 }
-/* line 475, ../styles/_app.scss */
-.nav-menu .menu .circle {
+
+/* line 492, ../styles/_app.scss */
+.circle {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -960,8 +974,8 @@ ul.portfolio-pieces-stage {
   line-height: 100%;
   z-index: -1;
 }
-/* line 484, ../styles/_app.scss */
-.nav-menu .menu .circle span {
+/* line 501, ../styles/_app.scss */
+.circle span {
   position: absolute;
   display: block;
   width: 30px;
@@ -974,27 +988,17 @@ ul.portfolio-pieces-stage {
   border-radius: 100%;
   background: none;
 }
-/* line 498, ../styles/_app.scss */
-.nav-menu .menu .circle .menu-active {
+/* line 515, ../styles/_app.scss */
+.circle .menu-active {
   width: 70px;
   height: 70px;
   margin: -34px 0 0 -34px;
   background: #cccccc;
 }
-/* line 507, ../styles/_app.scss */
-.nav-menu .menu:hover, .nav-menu .menu:active {
-  color: #0071b7;
-  cursor: pointer;
-}
-/* line 511, ../styles/_app.scss */
-.nav-menu .menu a {
-  display: block;
-  width: inherit;
-  height: inherit;
-  text-indent: -999em;
-}
-/* line 521, ../styles/_app.scss */
-.nav-menu .flip {
+
+/* Rotating text */
+/* line 526, ../styles/_app.scss */
+.flip {
   float: left;
   height: 70px;
   color: #cccccc;
@@ -1003,44 +1007,47 @@ ul.portfolio-pieces-stage {
   font-weight: 200;
   word-spacing: 9px;
 }
-/* line 529, ../styles/_app.scss */
-.nav-menu .flip p {
+/* line 534, ../styles/_app.scss */
+.flip p {
   margin: 0;
 }
-/* line 532, ../styles/_app.scss */
-.nav-menu .flip span {
+/* line 537, ../styles/_app.scss */
+.flip span {
   display: inline-block;
   margin: 0;
   padding: 0;
   width: 55px;
   text-align: center;
 }
-/* line 538, ../styles/_app.scss */
-.nav-menu .flip span a {
+/* line 543, ../styles/_app.scss */
+.flip span a {
   color: #0071b7;
   line-height: 24px;
   border-bottom: 1px dotted #666666;
 }
-/* line 542, ../styles/_app.scss */
-.nav-menu .flip span a:hover {
+/* line 547, ../styles/_app.scss */
+.flip span a:hover {
   color: #cccccc;
   cursor: pointer;
 }
-/* line 552, ../styles/_app.scss */
-.nav-menu ul#items {
+
+/* Navigation links */
+/* line 557, ../styles/_app.scss */
+ul#items {
   width: 70px;
   margin: 0;
   padding: 0;
   color: white;
   text-align: center;
+  clear: both;
 }
-/* line 558, ../styles/_app.scss */
-.nav-menu ul#items li.navItem {
+/* line 564, ../styles/_app.scss */
+ul#items li.navItem {
   position: relative;
   list-style: none;
 }
-/* line 562, ../styles/_app.scss */
-.nav-menu ul#items li.navItem button {
+/* line 568, ../styles/_app.scss */
+ul#items li.navItem button {
   display: block;
   width: 22px;
   margin: 0 auto;
@@ -1051,16 +1058,16 @@ ul.portfolio-pieces-stage {
   border-bottom: 1px solid #666666;
   overflow: hidden;
 }
-/* line 572, ../styles/_app.scss */
-.nav-menu ul#items li.navItem button:hover {
+/* line 578, ../styles/_app.scss */
+ul#items li.navItem button:hover {
   color: white;
 }
-/* line 577, ../styles/_app.scss */
-.nav-menu ul#items li.navItem:last-child button {
+/* line 583, ../styles/_app.scss */
+ul#items li.navItem:last-child button {
   border-bottom: none;
 }
-/* line 579, ../styles/_app.scss */
-.nav-menu ul#items li.navItem span {
+/* line 585, ../styles/_app.scss */
+ul#items li.navItem span {
   display: none;
   position: absolute;
   width: 80px;
@@ -1068,4 +1075,25 @@ ul.portfolio-pieces-stage {
   padding: 10px;
   color: #888;
   text-align: left;
+}
+
+/* line 597, ../styles/_app.scss */
+.resume {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: #cccccc;
+  padding: 0 15px;
+  border-radius: 2px;
+  height: 30px;
+  font-weight: 100;
+  line-height: 30px;
+  z-index: 999;
+}
+/* line 608, ../styles/_app.scss */
+.resume i {
+  line-height: 30px;
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid #0071b7;
 }
